@@ -32,7 +32,7 @@ address hacker = makeAddr("Saad");
 vm.stopPrank();
 
 // assert
-assertEq(fally.owner,hacker);
+assertEq(fally.owner(),hacker);
         
     }
 }
