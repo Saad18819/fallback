@@ -7,6 +7,7 @@ import {Fallback} from "../src/fallback.sol";
 
 contract testing is Test{
     function setUp() public{
-        
+deployScript deployContract = new deployScript();
+
     }
 }
