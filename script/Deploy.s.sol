@@ -5,10 +5,11 @@ import {Script} from "forge-std/Script.sol";
 import{Fallback} from "../src/fallback.sol";
 
 contract deployScript is Script{
+
     function run() public returns(Fallback){
         vm.startBroadcast();
-        Fallback fallback = new Fallback();
+        Fallback fallbacky = new Fallback();
         vm.stopBroadcast();
-        return fallback;
+        return fallbacky;
     }
 }
